@@ -120,3 +120,17 @@ const tanktop = new Schema({ <br />
 ------- Milestones ----------
 
 1. Create the backend and get the home page to render
+
+2. Get the Full Crud functionality for one apparel item
+
+3. Follow suit with all of the apparel items/models ^^
+
+4. Create React App and Render Hello
+
+5. Set up React App and Connect to the backend
+
+6. Create components and get Backend data to render on front end
+
+7. Test functionality and anticipate bugs
+
+8. Deploy 
