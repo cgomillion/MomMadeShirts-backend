@@ -74,38 +74,38 @@ TBD
 
 --------- Models ----------
 
-const tShirt = new Schema({
-    name: {type: String, required: true},
-    brand: {type: String, required: true},
-    color: (type: ?) // Array of colors 
-    size: {type: String, required: true},
-    img: String,
-    description: String
+const tShirt = new Schema({ <br />
+    name: {type: String, required: true}, <br />
+    brand: {type: String, required: true}, <br />
+    color: (type: ?) // Array of colors  <br />
+    size: {type: String, required: true}, <br />
+    img: String, <br />
+    description: String <br />
 });
 
-const sweatshirt = new Schema({
-    name: {type: String, required: true},
-    brand: {type: String, required: true},
-    color: (type: ?) // Array of colors 
-    size: {type: String, required: true},
-    img: String,
-    description: String
+const sweatshirt = new Schema({ <br />
+    name: {type: String, required: true}, <br />
+    brand: {type: String, required: true}, <br />
+    color: (type: ?), // Array of colors  <br />
+    size: {type: String, required: true}, <br />
+    img: String, <br />
+    description: String <br />
 });
 
-const hoodie = new Schema({
-    name: {type: String, required: true},
-    brand: {type: String, required: true},
-    color: (type: ?) // Array of colors 
-    size: {type: String, required: true},
-    img: String,
-    description: String
+const hoodie = new Schema({ <br />
+    name: {type: String, required: true}, <br />
+    brand: {type: String, required: true}, <br />
+    color: (type: ?), // Array of colors  <br />
+    size: {type: String, required: true}, <br />
+    img: String, <br />
+    description: String <br />
 });
 
-const tanktop = new Schema({
-    name: {type: String, required: true},
-    brand: {type: String, required: true},
-    color: (type: ?) // Array of colors 
-    size: {type: String, required: true},
-    img: String,
-    description: String
+const tanktop = new Schema({ <br />
+    name: {type: String, required: true}, <br />
+    brand: {type: String, required: true}, <br />
+    color: (type: ?), // Array of colors  <br />
+    size: {type: String, required: true}, <br />
+    img: String, <br />
+    description: String <br />
 });
