@@ -4,6 +4,12 @@ Refrence Website: https://mommadecustoms.com/
 
 Project 4 -- Capstone -- MomMadeShirts
 
+![wireframe](/images/Custom_Wireframe.png)
+![wireframe](/images/Home_Page_wireframe.png)
+![wireframe](/images/Item_indexexample_wireframe.png)
+![wireframe](/images/Login_wireframe.png)
+![wireframe](/images/Shopping_cart_wireframe.png)
+
 Problem/Scenario: My older sister, Lauren, makes custom printed apparel. She has contracted someone to build her a web application. While it is 80-90 % complete, I would like to take the knowledge I have gained and apply myself to make my own version of her online retail web application.
 
 Purpose: To create an interactive and smooth functioning website for my sister's clients/consumer to use and have access to her entire inventory.
@@ -109,3 +115,8 @@ const tanktop = new Schema({ <br />
     img: String, <br />
     description: String <br />
 });
+
+
+------- Milestones ----------
+
+1. Create the backend and get the home page to render
