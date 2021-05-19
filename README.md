@@ -44,19 +44,32 @@ TBD
 
 --------- Models ----------
 
-const :productType = new Schema({ <br />
+const productSchema = new Schema({ <br />
     name: {type: String, required: true}, <br />
     brand: {type: String, required: true}, <br />
     color: (type: ?) // Array of colors  <br />
     size: {type: String, required: true}, <br />
     img: String, <br />
-    description: String <br />
+    description: String, <br />
+    price: Number <br />
 });
 
 const usersSchema = new Schema({ <br />
     username: { type: String, required: true }, <br />
     password: { type: String, required: true } <br />
 });
+
+const cartSchema = new Schema({
+    name: {type: String, required: true}, <br />
+    brand: {type: String, required: true}, <br />
+    color: (type: ?) // Array of colors  <br />
+    size: {type: String, required: true}, <br />
+    img: String, <br />
+    description: String, <br />
+    price: Number, <br />
+    qty: Number
+    
+})
 
 
 ------- Milestones ----------
