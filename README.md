@@ -134,3 +134,8 @@ const tanktop = new Schema({ <br />
 7. Test functionality and anticipate bugs
 
 8. Deploy 
+
+
+Front End : React
+
+Backend : Node.js, MongoDB, Mongoose
