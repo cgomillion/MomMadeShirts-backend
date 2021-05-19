@@ -1,0 +1,28 @@
+{
+  "name": "mommadeshirts-backend",
+  "version": "1.0.0",
+  "description": "Refrence Website: https://mommadecustoms.com/",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cgomillion/MomMadeShirts-backend.git"
+  },
+  "author": "Corey Gomillion II",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cgomillion/MomMadeShirts-backend/issues"
+  },
+  "homepage": "https://github.com/cgomillion/MomMadeShirts-backend#readme",
+  "dependencies": {
+    "connect-mongodb-session": "^2.4.1",
+    "cors": "^2.8.5",
+    "dotenv": "^9.0.2",
+    "express": "^4.17.1",
+    "express-session": "^1.17.1",
+    "mongoose": "^5.12.10"
+  }
+}
