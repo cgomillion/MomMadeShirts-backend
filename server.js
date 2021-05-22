@@ -26,7 +26,7 @@ const corsOptions = {
 
 app.use(cors(corsOptions));
 
-app.set('trust proxy', 1);
+// app.set('trust proxy', 1);
 
 app.use(session({
 	secret: process.env.SECRET,
@@ -60,8 +60,11 @@ db.on('disconnected', ()=> console.log('Mongoose disconnected...'));
 app.use(express.json());
 
 
+// Controllers
 
+app.use('/prouducts', require('./controllers/productController'));
 
+app.use('/users', require('./controllers/userController'));
 
 
 
