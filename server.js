@@ -1,4 +1,4 @@
-// Dependencies \\
+// Dependencies \\ 
 
 require('dotenv').config();
 const express = require('express');
@@ -53,18 +53,25 @@ mongoose.connect(process.env.MONGODBURI,{
 
 
 // Listeners
-db.once('open', ()=> console.log('DB connected...'));
+db.on('open', ()=> console.log('DB connected...'));
 db.on('error', (error)=> console.log(error.message));
 db.on('disconnected', ()=> console.log('Mongoose disconnected...'));
 
 app.use(express.json());
 
 
+app.get("/", (req, res) => {
+    res.json({ message: "API running..." });
+    console.log('Home Page ->')
+  });
+
 // Controllers
+const productController = require('./controllers/productController');
+const userController = require('./controllers/userController')
 
-app.use('/prouducts', require('./controllers/productController'));
+app.use('/prouducts', productController );
 
-app.use('/users', require('./controllers/userController'));
+app.use('/users', userController );
 
 
 
