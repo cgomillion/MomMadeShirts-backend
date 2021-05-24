@@ -9,9 +9,10 @@ const cors = require('cors');
 const session = require('express-session');
 const MongoDBStore = require('connect-mongodb-session')(session);
 
+
 // Middleware \\ 
 
-const whitelist = [process.env.BASEURL];
+const whitelist = ['http://localhost:3005', process.env.BASEURL];
 
 const corsOptions = {
 	origin: (origin, callback) => {
@@ -26,8 +27,9 @@ const corsOptions = {
 
 app.use(cors(corsOptions));
 
-// app.set('trust proxy', 1);
+app.set('trust proxy', 1);
 
+// creates req.session
 app.use(session({
 	secret: process.env.SECRET,
 	resave: false, 
@@ -44,34 +46,43 @@ app.use(session({
 
 // Mongoose Config. \\
 
-const db = mongoose.connection;
+
 mongoose.connect(process.env.MONGODBURI,{
 	useNewUrlParser:true,
 	useUnifiedTopology: true,
-	useFindAndModify: false
+	useFindAndModify: false,
+    
 });
 
-
+const db = mongoose.connection;
 // Listeners
-db.on('open', ()=> console.log('DB connected...'));
+db.once('open', ()=> console.log('DB connected...'));
 db.on('error', (error)=> console.log(error.message));
 db.on('disconnected', ()=> console.log('Mongoose disconnected...'));
 
+// const isAuthenticated = (req, res, next) => {
+//     if (req.session.currentUser) {
+//         return next()
+//     } else {
+//         res.status(403).json({msg:"login required"})
+//     }
+// }
+
+// creates req.body
 app.use(express.json());
 
 
+// test server is running and home page displays something
 app.get("/", (req, res) => {
     res.json({ message: "API running..." });
     console.log('Home Page ->')
   });
 
 // Controllers
-const productController = require('./controllers/productController');
-const userController = require('./controllers/userController')
 
-app.use('/prouducts', productController );
+app.use('/prouducts', require('./controllers/productController') );
 
-app.use('/users', userController );
+app.use('/user', require('./controllers/userController') );
 
 
 

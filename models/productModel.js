@@ -6,14 +6,13 @@ const productSchema = new Schema({
     product: {
         name: {type: String, required: true}, 
         brand: {type: String, required: true}, 
-        color: String,   
+        color: {type: String, required: true},   
         size: {type: String, required: true}, 
-        img: String,
-        description: String,
-        price: Number
+        img: {type: String, required: true},
+        description: {type: String, required: true},
+        price: {type: Number, required: true}
     }
 });
 
-const Product = model('Product', productSchema);
 
-module.exports = Product;
+module.exports = model('Product', productSchema);
