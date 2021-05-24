@@ -1,19 +1,16 @@
-// Dependencies \\ 
-
-require('dotenv').config();
+//DEPENDENCIES
+require('dotenv').config()
 const express = require('express');
 const app = express();
 const PORT = process.env.PORT;
 const mongoose = require('mongoose');
-const cors = require('cors');
+const cors = require('cors')
 const session = require('express-session');
 const MongoDBStore = require('connect-mongodb-session')(session);
 
-
-// Middleware \\ 
-
-const whitelist = ['http://localhost:3005', process.env.BASEURL];
-
+// MIDDLEWARE
+// SETUP CORS
+const whitelist = ['http://localhost:3000', process.env.HEROKUFRONTEND]
 const corsOptions = {
 	origin: (origin, callback) => {
 		if (whitelist.indexOf(origin) !== -1 || !origin) {
@@ -23,13 +20,12 @@ const corsOptions = {
 		}
 	},
 	credentials:true
-};
+}
+app.use(cors(corsOptions))
 
-app.use(cors(corsOptions));
+app.set('trust proxy', 1) // trust first proxy
 
-app.set('trust proxy', 1);
-
-// creates req.session
+// creates "req.session"
 app.use(session({
 	secret: process.env.SECRET,
 	resave: false, 
@@ -42,20 +38,18 @@ app.use(session({
 		sameSite: 'none',
 		secure: true
 	}
-}));
+}))
 
-// Mongoose Config. \\
-
-
+// MONGOOSE SETUP
+const db = mongoose.connection;
 mongoose.connect(process.env.MONGODBURI,{
 	useNewUrlParser:true,
 	useUnifiedTopology: true,
-	useFindAndModify: false,
-    
+	useFindAndModify: false
 });
 
-const db = mongoose.connection;
-// Listeners
+
+// set up listeners 
 db.once('open', ()=> console.log('DB connected...'));
 db.on('error', (error)=> console.log(error.message));
 db.on('disconnected', ()=> console.log('Mongoose disconnected...'));
@@ -67,8 +61,7 @@ db.on('disconnected', ()=> console.log('Mongoose disconnected...'));
 //         res.status(403).json({msg:"login required"})
 //     }
 // }
-
-// creates req.body
+// this will create the req.body object.
 app.use(express.json());
 
 
@@ -80,7 +73,7 @@ app.get("/", (req, res) => {
 
 // Controllers
 
-app.use('/prouducts', require('./controllers/productController') );
+app.use('/products', require('./controllers/productController') );
 
 app.use('/user', require('./controllers/userController') );
 
