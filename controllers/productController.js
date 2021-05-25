@@ -15,7 +15,7 @@ products.get('/seed', (req, res) => {
                 size: 'large', 
                 img: 'url.com',
                 description: 'test shirt desc.',
-                price: 10
+                price: '$10'
             }
 		},
 		{
@@ -27,7 +27,7 @@ products.get('/seed', (req, res) => {
                 size: 'x-large', 
                 img: 'url.com',
                 description: 'test sweatshirt desc.',
-                price: 15
+                price: '$15'
             }
 		},
 		{
@@ -39,7 +39,7 @@ products.get('/seed', (req, res) => {
                 size: 'medium', 
                 img: 'url.com',
                 description: 'test tank top desc.',
-                price: 8
+                price: '$8'
             }
 		},
         {
@@ -51,7 +51,7 @@ products.get('/seed', (req, res) => {
                 size: 'small', 
                 img: 'url.com',
                 description: 'test hoodie desc.',
-                price: 20
+                price: '$20'
             }
 		},
     ],
