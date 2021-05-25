@@ -66,11 +66,67 @@ products.get('/seed', (req, res) => {
 })
 
 
-// GET (index) list of cars
+// GET (index) list of all Products
 products.get('/', (req, res)=>{
     // res.send('Get route is working!!!');
 
     productModel.find({}, (error, foundProducts)=>{
+        if (error){
+            res.status(400).json(error)
+        }
+        else{
+            res.status(200).json(foundProducts)
+        }
+    })
+})
+
+// GET (index) list of all TSHIRTS
+products.get('/tshirts', (req, res)=>{
+    // res.send('Get route is working!!!');
+
+    productModel.find({ type: 'tshirt'}, (error, foundProducts)=>{
+        if (error){
+            res.status(400).json(error)
+        }
+        else{
+            res.status(200).json(foundProducts)
+        }
+    })
+})
+
+// GET (index) list of all TANKTOPS
+products.get('/tanktops', (req, res)=>{
+    // res.send('Get route is working!!!');
+
+    productModel.find({ type: 'tanktop'}, (error, foundProducts)=>{
+        if (error){
+            res.status(400).json(error)
+        }
+        else{
+            res.status(200).json(foundProducts)
+        }
+    })
+})
+
+// GET (index) list of all SWEATSHIRTS
+products.get('/sweatshirts', (req, res)=>{
+    // res.send('Get route is working!!!');
+
+    productModel.find({ type: 'sweatshirt'}, (error, foundProducts)=>{
+        if (error){
+            res.status(400).json(error)
+        }
+        else{
+            res.status(200).json(foundProducts)
+        }
+    })
+})
+
+// GET (index) list of all HOODIES
+products.get('/hoodies', (req, res)=>{
+    // res.send('Get route is working!!!');
+
+    productModel.find({ type: 'hoodie'}, (error, foundProducts)=>{
         if (error){
             res.status(400).json(error)
         }
