@@ -65,6 +65,7 @@ products.get('/seed', (req, res) => {
   })
 })
 
+// ----------- INDEX ROUTES -------------
 
 // GET (index) list of all Products
 products.get('/', (req, res)=>{
@@ -135,6 +136,23 @@ products.get('/hoodies', (req, res)=>{
         }
     })
 })
+
+// ----------------------------------------
+// ------------ SHOW ROUTES ---------------
+
+// SHOW ROUTE ---> TSHIRTS
+products.get('/:id', (req, res) => {
+    productModel.findById( req.params.id, (error, foundProducts)=>{
+        if (error){
+            res.status(400).json(error)
+        }
+        else {
+            res.status(200).json(foundProducts)
+        }
+    })
+})
+
+
 
 // POST ROUTE
 products.post('/', (req, res)=>{
