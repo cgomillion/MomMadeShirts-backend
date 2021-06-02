@@ -7,29 +7,29 @@ const productModel = require('../models/productModel');
 products.get('/seed', (req, res) => {
 	productModel.create([    
 		{
-            type: 'tshirt',
+            type: "tshirt",
             product: {
-                name: 'test shirt one', 
-                brand: 'my brand', 
-                color: 'red',   
-                size: 'large', 
-                img: 'url.com',
-                description: 'test shirt desc.',
-                price: '$10'
+                name: "Tattoos, Pretty Eyes, and Thick Thighs Tee/ Adult Unisex", 
+                brand: "MomMadeCustomTees", 
+                color: ["Ash Gray", "White", "Black"],   
+                size: ["Small (Mens)","Medium (Mens)","Large (Mens)", "XL (Mens)", "2X (Mens)"], 
+                img: "https://i.etsystatic.com/17860400/r/il/ca29cd/2265751148/il_1588xN.2265751148_jxcy.jpg",
+                description: "This shirt is unisex sizing for comfort as it is what we prefer. The image is printed as is, and only on the color options available. After shirt has arrived to your home you have 7 days to return the shirt in the condition it came in for an exchange.",
+                price: "$24.99"
             }
-		},
+        },
 		{
-            type: 'sweatshirt',
+            type: "tshirt",
             product: {
-                name: 'test sweatshirt one', 
-                brand: 'my brand', 
-                color: 'yellow',   
-                size: 'x-large', 
-                img: 'url.com',
-                description: 'test sweatshirt desc.',
-                price: '$15'
+                name: "She's a J. Cole Verse tee/ Adult Unisex", 
+                brand: "MomMadeCustomTees", 
+                color: ["White", "Black"],   
+                size: ["Men's Small", "Men's Medium", "Men's Large", "Men's XL", "Men's 2XL", "Men's 3XL"], 
+                img: "https://i.etsystatic.com/17860400/r/il/aa589d/2136708430/il_1588xN.2136708430_s36o.jpg",
+                description: "This shirt is unisex sizing for comfort as it is what we prefer. The image is printed as is, and only on the color options available. Image printed on a Bella Canvas 3001, size charted shown with shirt mock up. Pre-shrunk, Cotton, Jersey and Polyster blend. After shirt has arrived to your home you have 7 days to return the shirt in the condition it came in for an exchange",
+                price: "$24.99"
             }
-		},
+        },
 		{
             type: 'tanktop',
             product: {
