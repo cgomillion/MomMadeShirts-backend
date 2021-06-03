@@ -3,7 +3,6 @@ const express = require('express');
 const users = express.Router();
 const usersModel = require('../models/userModel');
 
-
 // POST ROUTE sign up
 users.post('/signup', (req, res) => {
     // Search through existing Users to see if username exists already
