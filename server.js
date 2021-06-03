@@ -10,7 +10,7 @@ const MongoDBStore = require('connect-mongodb-session')(session);
 
 // MIDDLEWARE
 // SETUP CORS
-const whitelist = ['http://localhost:3000', process.env.HEROKUFRONTEND]
+const whitelist = ['http://localhost:3000', ]
 const corsOptions = {
 	origin: (origin, callback) => {
 		if (whitelist.indexOf(origin) !== -1 || !origin) {
@@ -49,18 +49,18 @@ mongoose.connect(process.env.MONGODBURI,{
 });
 
 
-// set up listeners 
+// set up database listeners for the terminal
 db.once('open', ()=> console.log('DB connected...'));
 db.on('error', (error)=> console.log(error.message));
 db.on('disconnected', ()=> console.log('Mongoose disconnected...'));
 
-// const isAuthenticated = (req, res, next) => {
-//     if (req.session.currentUser) {
-//         return next()
-//     } else {
-//         res.status(403).json({msg:"login required"})
-//     }
-// }
+const isAuthenticated = (req, res, next) => {
+    if (req.session.currentUser) {
+        return next()
+    } else {
+        res.status(403).json({msg:"login required"})
+    }
+}
 // this will create the req.body object.
 app.use(express.json());
 
@@ -72,12 +72,14 @@ app.get("/", (req, res) => {
   });
 
 // Controllers
-
+// Products 
 app.use('/products', require('./controllers/productController') );
 
+// Users
 app.use('/user', require('./controllers/userController') );
 
-
+// Sessions
+app.use('/sessions', require('./controllers/sessionsController') );
 
 
 

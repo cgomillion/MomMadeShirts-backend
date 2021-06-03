@@ -138,9 +138,9 @@ products.get('/hoodies', (req, res)=>{
 })
 
 // ----------------------------------------
-// ------------ SHOW ROUTES ---------------
 
-// SHOW ROUTE ---> TSHIRTS
+
+// SHOW ROUTE
 products.get('/:id', (req, res) => {
     productModel.findById( req.params.id, (error, foundProducts)=>{
         if (error){
@@ -154,7 +154,7 @@ products.get('/:id', (req, res) => {
 
 
 
-// POST ROUTE
+// POST ROUTE (For when I submit the New Product on the Front-End)
 products.post('/', (req, res)=>{
 
     productModel.create(req.body, (error, createdProduct) => {
@@ -168,7 +168,7 @@ products.post('/', (req, res)=>{
 
 })
 
-// DELETE ROUTE
+// DELETE ROUTE 
 products.delete('/:id', (req, res)=>{
 
     productModel.findByIdAndDelete(req.params.id, (error, deletedProduct)=>{
