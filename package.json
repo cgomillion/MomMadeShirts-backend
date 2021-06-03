@@ -1,6 +1,9 @@
 {
   "name": "mommadeshirts-backend",
   "version": "1.0.0",
+  "engines": {
+    "node": "16.0.0"
+  },
   "description": "Refrence Website: https://mommadecustoms.com/",
   "main": "server.js",
   "scripts": {
