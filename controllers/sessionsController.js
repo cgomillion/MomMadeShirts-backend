@@ -3,7 +3,6 @@ const express = require('express');
 const sessions = express.Router();
 const User = require('../models/userModel');
 
-
 //session new route --> needs to be a post route
 sessions.get('/new', (req,res) => {
 	// Connect with react
