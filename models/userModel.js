@@ -7,5 +7,4 @@ const usersSchema = new Schema({
 });
 
 
-
 module.exports = model('User', usersSchema);
