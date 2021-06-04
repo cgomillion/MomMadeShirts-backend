@@ -68,7 +68,7 @@ products.get('/seed', (req, res) => {
 // ----------- INDEX ROUTES -------------
 
 // GET (index) list of all Products
-products.get('/', (req, res)=>{
+products.get('/products', (req, res)=>{
     // res.send('Get route is working!!!');
 
     productModel.find({}, (error, foundProducts)=>{
