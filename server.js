@@ -10,7 +10,7 @@ const MongoDBStore = require('connect-mongodb-session')(session);
 
 // MIDDLEWARE
 // SETUP CORS
-const whitelist = ['http://localhost:3000', process.env.HEROKUFRONTEND]
+const whitelist = ['http://localhost:3000']
 const corsOptions = {
 	origin: (origin, callback) => {
 		if (whitelist.indexOf(origin) !== -1 || !origin) {
