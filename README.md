@@ -8,6 +8,8 @@ Heroku Frontend: https://proj4-mommadecustoms-react.herokuapp.com/
 
 Heroku Backend: https://proj4-mommadecustoms-api.herokuapp.com/
 
+LinkedIn: https://www.linkedin.com/in/corey-gomillion/
+
 Project 4 -- Capstone -- MomMadeShirts
 
 ![wireframe](/images/Custom_Wireframe.png)
