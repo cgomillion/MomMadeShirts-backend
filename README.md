@@ -41,11 +41,11 @@ TBD
 
 -> When the user clicks on any given apparel tab (t-shirt, sweatshirt, etc.), they will be redirected to the selected apparel type's index page; a gallery of all the available designs and styles
 
--> The User will be able the click any item individually and see its view page; a display that allows the user to select the size, color and, quantity as needed and add to their shopping cart
+-> The User will be able the click any item individually and see its view page; a display that allows the user to select the size, color and, quantity as needed and add to their shopping cart (Still in development)
 
--> The User will be able to view and edit their shopping cart  before completing the check-out transaction.
+-> The User will be able to view and edit their shopping cart  before completing the check-out transaction. (Cart is still in development)
 
--> The User will be able the register and log-in to an account that will save and store their previous cart selections
+-> The User will be able the register and log-in to an account that will save and store their previous cart selections (Cart is still in development)
 
 
 --------- Models ----------
